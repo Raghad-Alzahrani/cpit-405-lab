@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab 6</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: #4a4a4a;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-top: 10px;
+            color: #4a4a4a;
+        }
+
+        #likeButton,#dislikeButton {
+            font-size: 50px;
+            padding: 5px 30px;
+            margin: 10px;
+            background-color: #ededef;
+            border: 1px solid #afafaf;
+            border-radius: 5px;
+        }
+
+        #likeButton:hover, #dislikeButton:hover {
+             background-color: rgb(255, 211, 211);
+            }
+
+        #comment {
+            display: block;
+            width: 50%;
+            height: 140px;
+            padding: 10px;
+            margin: 20px auto;
+            font-size: 20px;
+            border: 1px solid #afafaf;
+            border-radius: 5px;
+        }
+
+        #submitButton,#resetButton {
+            background-color: #818181;
+            color: white;
+            padding: 10px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        #commentsList {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lab 6</h1>
+    <h2>Like or dislike</h2>
+
+    <button id="likeButton">👍<span id="likeCount">100</span></button>
+    <button id="dislikeButton">👎<span id="dislikeCount">20</span></button>
+
+    <h2>Comments</h2>
+    <textarea id="comment" placeholder="Write a comment..."></textarea>
+
+    <br>
+
+    <button id="submitButton">Submit</button>
+    <button id="resetButton">Clear</button>
+
+    <div id="commentsList"></div>
+    
+    <script>
+    let likes=100;
+    let dislikes=20;
+    let comments= [];
+    let likeButton=document.getElementById("likeButton");
+    let dislikeButton=document.getElementById("dislikeButton");
+    let submitButton=document.getElementById("submitButton");
+    let resetButton=document.getElementById("resetButton");
+    
+    likeButton.addEventListener("click", function() {
+        if (!document.cookie.includes("choice=")) {
+            likes++;
+        document.getElementById("likeCount").innerText = likes;
+        document.cookie = "choice=like";
+        document.cookie = "likes=" + likes;
+    }
+});
+    dislikeButton.addEventListener("click", function() {
+        if (!document.cookie.includes("choice=")) {
+            dislikes++;
+        document.getElementById("dislikeCount").innerText = dislikes;
+        document.cookie = "choice=dislike"; 
+        document.cookie = "dislikes=" + dislikes;
+    }
+});
+
+function getVotes() {
+    let cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i].trim().split("=");
+        if (cookie[0] === "likes") {
+            likes = Number(cookie[1]);
+        }
+        if (cookie[0] === "dislikes") {
+            dislikes = Number(cookie[1]);
+        }
+    }
+    document.getElementById("likeCount").innerText = likes;
+    document.getElementById("dislikeCount").innerText = dislikes;
+} getVotes();
+
+
+
+submitButton.addEventListener("click", function() {
+    let comment = document.getElementById("comment").value;
+    if (comment.trim() !== "" && !document.cookie.includes("userComment=")) {
+        comments.push(comment);
+        document.getElementById("commentsList").innerText = comment;
+        document.cookie = "userComment=" + encodeURIComponent(comment);
+        document.getElementById("comment").value = "";
+    }
+});
+
+function getComments() {
+    let cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i].trim().split("=");
+        if (cookie[0] === "userComment") {
+            let comment = decodeURIComponent(cookie[1]);
+            comments.push(comment);
+            document.getElementById("commentsList").innerText = comment;
+        }
+    }
+}getComments();
+
+resetButton.addEventListener("click", function() {
+    document.cookie = "choice=; max-age=0";
+    document.cookie = "likes=; max-age=0";
+    document.cookie = "dislikes=; max-age=0";
+    document.cookie = "userComment=; max-age=0";
+    likes = 100;
+    dislikes = 20;
+    comments = [];
+    document.getElementById("likeCount").innerText = likes;
+    document.getElementById("dislikeCount").innerText = dislikes;
+    document.getElementById("commentsList").innerText = "";
+    document.getElementById("comment").value = "";
+    alert("Your choices and comments have been cleared");
+});
+
+
+    </script>
+
+</body>
+
+</html>
