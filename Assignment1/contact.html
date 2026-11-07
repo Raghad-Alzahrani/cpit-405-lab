@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +36,9 @@
 
                 <h2>Send Me a Message</h2>
 
-                <form action="https://formsubmit.co/ralzahrani1048@stu.kau.edu.sa" method="POST">
+                <form action="https://api.web3forms.com/submit" method="POST">
+
+                    <input type="hidden" name="access_key" value="bb2aaeb6-a9c0-4977-90c7-1b146ec71854">
 
                     <label for="name">Full Name:</label>
                     <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -46,7 +47,7 @@
                     <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
                     <label for="subject">Subject:</label>
-                    <input type="text" id="subject" name="_subject" placeholder="Enter message subject" required>
+                    <input type="text" id="subject" name="subject" placeholder="Enter message subject" required>
 
                     <div class="message-type">
 
@@ -61,7 +62,10 @@
                     </div>
 
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+                    <textarea id="message" name="message" rows="6" placeholder="Write your message here..."
+                        required></textarea>
+
+                    <input type="hidden" name="redirect" value="https://web3forms.com/success">
 
                     <button type="submit">Send Message</button>
 
