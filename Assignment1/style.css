@@ -520,65 +520,18 @@ footer {
 .contact-section button:hover {
     background-color: #7B2CBF;
 }
-
-
 /* Responsive Design */
 
-/* Tablets */
-@media screen and (max-width: 1024px) {
-
-    .home {
-        gap: 30px;
-    }
-
-    .intro h1 {
-        font-size: 45px;
-    }
-
-    .intro p {
-        font-size: 24px;
-    }
-
-    .profile {
-        width: 300px;
-        height: 300px;
-        flex-shrink: 0;
-    }
-
-    .cv-layout {
-        margin: 20px;
-    }
-
-    .cv-sidebar {
-        width: 30%;
-        padding: 20px;
-    }
-
-    .cv-main {
-        width: 70%;
-        padding: 20px;
-        margin-left: 20px;
-    }
-
-}
-
-/* Mobile Phones */
 @media screen and (max-width: 768px) {
 
     /* Navigation */
-
     header {
         height: auto;
         padding: 20px;
         text-align: center;
     }
 
-    header h2 {
-        float: none;
-        margin-bottom: 20px;
-    }
-
-    nav {
+    header h2, nav {
         float: none;
     }
 
@@ -588,99 +541,80 @@ footer {
     }
 
     /* Home */
-
     .home {
-        flex-direction: column;
+        flex-direction: column-reverse;
         padding: 30px 20px;
-        text-align: center;
+        gap: 30px;
     }
 
     .intro {
         width: 100%;
-    }
-
-    .intro .hello {
-        font-size: 28px;
-    }
-
-    .intro h1 {
-        font-size: 36px;
-    }
-
-    .intro p {
-        font-size: 22px;
-    }
-
-    .about, .welcome {
-        font-size: 18px;
-    }
-
-    .profile {
-        width: 250px;
-        height: 250px;
-    }
-
-    /* Info */
-
-    .info {
-        flex-direction: column;
-        margin: 20px 20px 60px;
-        padding: 25px;
         text-align: center;
     }
 
-    /* Quick Access */
+    .intro h1 { font-size: 30px; }
+    .intro p { font-size: 20px; }
+    .intro .hello { font-size: 26px; }
+    .about, .welcome { font-size: 18px; }
 
-    .quick-access {
-        margin: 20px 20px 80px;
-        padding: 25px;
+    .profile {
+        width: 200px;
+        height: 200px;
+        flex-shrink: 0;
     }
 
-    .quick-links {
+    /* Info & Quick Access */
+    .info, .quick-links {
         flex-direction: column;
         gap: 20px;
     }
 
+    .info, .quick-access {
+        margin: 20px 15px 60px;
+        padding: 20px;
+    }
+
     .quick-links a {
-        width: 90%;
+        width: 100%;
         box-sizing: border-box;
     }
 
-    /* CV Page */
-
+    /* CV */
     .cv-layout {
         flex-direction: column;
         margin: 20px;
+        gap: 20px;
     }
 
-    .cv-sidebar {
-        width: 100%;
-        box-sizing: border-box;
-        margin-bottom: 20px;
-    }
-
-    .cv-main {
+    .cv-sidebar, .cv-main {
         width: 100%;
         box-sizing: border-box;
         margin-left: 0;
     }
 
-    /* Contact Page */
+    /* Labs / Projects */
+    .labs-page {
+        margin: 30px 15px 70px;
+    }
 
+    .labs-section, .projects-section {
+        padding: 20px 15px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .labs-table {
+        min-width: 650px;
+    }
+
+    /* Contact */
     .contact-page {
-        margin: 30px 20px 80px;
-    }
-
-    .contact-heading h1 {
-        font-size: 36px;
-    }
-
-    .contact-heading p {
-        font-size: 18px;
+        margin: 30px 15px 70px;
     }
 
     .contact-section {
         padding: 20px;
     }
-
 }
