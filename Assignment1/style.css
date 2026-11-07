@@ -20,7 +20,7 @@ header {
 
 header h2 {
     float: left;
-    color: #E0AAFF;
+    color: #7B2CBF;
     font-size: 28px;
     margin: 0;
 }
@@ -209,7 +209,7 @@ nav a:hover {
 
 .quick-links p {
     color: white;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 /* Footer */
