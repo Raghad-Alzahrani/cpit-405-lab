@@ -20,7 +20,7 @@ header {
 
 header h2 {
     float: left;
-    color: #7B2CBF;
+    color: #E0AAFF;
     font-size: 28px;
     margin: 0;
 }
@@ -69,7 +69,7 @@ nav a:hover {
 }
 
 .intro h1 {
-    color: #E0AAFF;
+    color: #5A189A;
     font-size: 60px;
 }
 
