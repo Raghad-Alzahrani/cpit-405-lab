@@ -234,7 +234,7 @@ footer {
 .cv-sidebar {
     width: 28%;
     padding: 30px;
-    background: linear-gradient(to right, #0f0122, #0f0122, #240046);
+    background-color: #080016;
     border-left: 4px solid #E0AAFF;
     border-radius: 10px;
     text-align: center;
