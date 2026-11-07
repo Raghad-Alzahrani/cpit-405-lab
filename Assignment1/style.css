@@ -590,21 +590,26 @@ footer {
     }
 
     /* Labs / Projects */
-    .labs-page {
-        margin: 30px 15px 70px;
-    }
 
-    .labs-section, .projects-section {
-        padding: 20px 15px;
-    }
+.labs-page {
+    margin: 30px 15px 70px;
+}
 
-    .table-container {
-        overflow-x: auto;
-    }
+.labs-box {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 20px 15px;
+}
 
-    .labs-table {
-        min-width: 650px;
-    }
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.course-table {
+    min-width: 600px;
+}
 
     /* Contact */
     .contact-page {
