@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <h2>&lt;/&gt;</h2>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="cv.html">CV</a>
+                <a href="labs.html">Labs / Projects</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </header>
+
+        <main class="contact-page">
+
+            <div class="cv-layout">
+
+                <!-- Left Side -->
+
+                <aside class="cv-sidebar">
+
+                    <img src="images/profile.png" alt="My Profile">
+
+                    <h2>Contact Info</h2>
+
+                    <p>
+                        Email:
+                        <a href="mailto:ralzahrani1048@stu.kau.edu.sa">ralzahrani1048@stu.kau.edu.sa</a>
+                    </p>
+
+                    <p>
+                        Phone:
+                        <a href="tel:+966551370743">+966 55 137 0743</a>
+                    </p>
+
+                    <div class="cv-social">
+
+                        <a href="https://github.com/Raghad-Alzahrani7" target="_blank">
+                            <img src="images/github.png" alt="GitHub">
+                        </a>
+
+                       <a href="https://www.linkedin.com/in/raghad-alzahrani-23603a3b1" target="_blank">
+                            <img src="images/linkedin.png" alt="LinkedIn">
+                        </a>
+
+                    </div>
+
+                </aside>
+
+                <!-- Right Side -->
+
+                <section class="contact-section">
+
+                    <h2>Contact Me</h2>
+
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        
+                        <input type="hidden" name="access_key" value="bb2aaeb6-a9c0-4977-90c7-1b146ec71854">
+
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name"
+                            placeholder="Enter your full name" required>
+
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email"
+                            placeholder="Enter your email" required>
+
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject"
+                            placeholder="Enter message subject" required>
+
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="6"
+                            placeholder="Write your message here..." required></textarea>
+
+                        <div class="message-type">
+
+                            <p>Message Type:</p>
+
+                            <input type="radio" id="inquiry" name="message_type"
+                                value="Inquiry" checked>
+                            <label for="inquiry">Inquiry</label>
+
+                            <input type="radio" id="feedback" name="message_type"
+                                value="Feedback">
+                            <label for="feedback">Feedback</label>
+
+                        </div>
+
+                        <input type="hidden" name="redirect"
+                            value="https://web3forms.com/success">
+
+                        <button type="submit">Send Message</button>
+
+                    </form>
+
+                </section>
+
+            </div>
+
+        </main>
+
+        <footer>
+            <p>&copy; Raghad Alzahrani</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>
